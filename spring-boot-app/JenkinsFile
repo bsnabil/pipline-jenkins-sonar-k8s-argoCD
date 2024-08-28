@@ -15,7 +15,7 @@ pipeline {
       steps {
         sh 'ls -ltr'
         // build the project and create a JAR file
-        sh 'spring-boot-app/ && mvn clean package'
+        sh 'cd spring-boot-app/ && mvn clean package'
       }
     }
     stage('Static Code Analysis') {
@@ -45,9 +45,9 @@ pipeline {
       }
     }
     stage('Update Deployment File') {
-      //  environment {
-        //    GIT_REPO_NAME = "pipline-jenkins-sonar-k8s-argoCD/"
-          //  GIT_USER_NAME = "bsnabil"
+        environment {
+             GIT_REPO_NAME = "pipline-jenkins-sonar-k8s-argoCD/"
+             GIT_USER_NAME = "bsnabil"
         }
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
