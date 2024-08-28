@@ -1,14 +1,14 @@
 pipeline {
   agent {
     docker {
-      image 'abhishekf5/maven-abhishek-docker-agent:v1' //unable to pull
+      image 'nginx/stable-alpine3.20' //unable to pull
     }
   }
   stages {
     stage('Checkout') {
       steps {
         sh 'echo passed'
-        //git branch: 'main', url: 'https://github.com/bsnabil/pipline-jenkins-sonar-k8s-argoCD.git'
+        git branch: 'main', url: 'https://github.com/bsnabil/pipline-jenkins-sonar-k8s-argoCD.git'
       }
     }
     stage('Build and Test') {
