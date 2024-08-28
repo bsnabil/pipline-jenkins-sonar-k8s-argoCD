@@ -47,8 +47,8 @@ pipeline {
     }
     stage('Update Deployment File') {
         environment {
-            GIT_REPO_NAME = "Jenkins-Zero-To-Hero"
-            GIT_USER_NAME = "Rupak-Shrestha"
+            GIT_REPO_NAME = "pipline-jenkins-sonar-k8s-argoCD"
+            GIT_USER_NAME = "bsnabil"
         }
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
