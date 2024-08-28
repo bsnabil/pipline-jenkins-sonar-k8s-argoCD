@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'nginx/stable-alpine3.20' //unable to pull
+      image 'nabil2222/react-application' //unable to pull
     }
   }
   stages {
