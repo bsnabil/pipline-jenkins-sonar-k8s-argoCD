@@ -21,7 +21,7 @@ pipeline {
  
     stage('Build and Push Docker Image') {
       environment {
-        DOCKER_IMAGE = "nabil2222/spring-boot-app-service:${BUILD_NUMBER}"
+        DOCKER_IMAGE = "nabil2222/spring-boot-app-service"
         // DOCKERFILE_LOCATION = "spring-boot-app/Dockerfile"
         REGISTRY_CREDENTIALS = credentials('docker-cred')
       }
