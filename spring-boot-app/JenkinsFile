@@ -1,8 +1,6 @@
 pipeline {
   agent {
-    docker {
-      image 'nabil2222/react-application' //unable to pull
-    }
+  
   }
   stages {
     stage('Checkout') {
@@ -11,13 +9,7 @@ pipeline {
         git branch: 'main', url: 'https://github.com/bsnabil/pipline-jenkins-sonar-k8s-argoCD.git'
       }
     }
-    stage('Build and Test') {
-      steps {
-        sh 'ls -ltr'
-        // build the project and create a JAR file
-        sh 'cd spring-boot-app/ && mvn clean package'
-      }
-    }
+
     }
   }
  
